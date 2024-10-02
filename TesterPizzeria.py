@@ -1,0 +1,2 @@
+class TesterPizzeria:
+    pass
