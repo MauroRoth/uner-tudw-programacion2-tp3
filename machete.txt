@@ -1,0 +1,50 @@
+Orden #1 (ESTADO_INICIAL): [
+	"Panceta y Verdeo" (ESTADO_POR_COCINAR),
+	"Palmitos" (ESTADO_POR_COCINAR), 
+	"Rucula"  (ESTADO_POR_COCINAR)
+]
+
+maestroPizzero.cocinar()
+
+Orden #1 (ESTADO_PARA_ENTREGAR): [
+	"Panceta y Verdeo" (ESTADO_COCINADA),
+	"Palmitos" (ESTADO_COCINADA), 
+	"Rucula"  (ESTADO_COCINADA)
+]
+
+maestroPizzero.entregar(orden1)
+
+def entregar(self, orden: Orden):
+	pizzasParaEntregar = []
+	for pizza in orden:
+		# if pizza.obtenerEstado() == Pizza.ESTADO_COCINADA:
+			# verificar que i < 2
+			# agregarlas a pizzasParaEntregar
+			# cambiarles el estado a Pizza.ESTADO_ENTREGADA
+
+	# recorrer una segunda vez para verificar si todas las pizzas
+	# de la orden fueron entregadas
+	for pizza in orden:
+		# TODO: por los alumnos
+		# si todas fueron entregadas => cambiamos el estado de la orden
+		# a Orden.ESTADO_ENTREGADA
+
+	return pizzasParaEntregar
+	
+
+Orden #1 (ESTADO_PARA_ENTREGAR): [
+	"Panceta y Verdeo" (ESTADO_ENTREGADA),
+	"Palmitos" (ESTADO_ENTRAGADA), 
+	"Rucula"  (ESTADO_COCINADA)
+]
+
+mozo1.servirPizzas()
+
+maestroPizzero.entregar(orden1)
+
+Orden #1 (ESTADO_ENTREGADA): [
+	"Panceta y Verdeo" (ESTADO_ENTREGADA),
+	"Palmitos" (ESTADO_ENTREGADA), 
+	"Rucula"  (ESTADO_ENTREGADA)
+]
+
