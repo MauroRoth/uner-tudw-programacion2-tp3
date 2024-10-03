@@ -61,6 +61,11 @@ class TesterPizzeria:
         maestroPizzero1.tomarPedido(orden3)
         maestroPizzero1.tomarPedido(orden4)
         print(maestroPizzero1.obtenerOrdenes()[0].obtenerNroOrden())
+        #   Mensaje cocinar()
+        print(50*'-')
+        print(maestroPizzero1.obtenerOrdenes()[0].obtenerEstadoOrden())
+        maestroPizzero1.cocinar()
+        print(maestroPizzero1.obtenerOrdenes()[0].obtenerEstadoOrden())
         # print('\nLista de Pizzas por Cocinar')
         # list(map(lambda x: print(x.obtenerVariedad()),maestroPizzero1.obtenerPizzasPorCocinar()))
 
