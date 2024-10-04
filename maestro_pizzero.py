@@ -17,16 +17,13 @@ class MaestroPizzero:
     def tomarPedido(self, orden: Orden) -> None:
         self.__ordenes.append(orden)
 
-    def cocinar(self): # REVISAR ESTE METODO, SE DEBE PODER MODIFICAR LAS LISTAS
+    def cocinar(self): 
         for orden in self.__ordenes:
             if orden.obtenerEstadoOrden() == Orden.ESTADO_INICIAL:
                 orden.establecerEstadoOrden(Orden.ESTADO_PARA_ENTREGAR)
+                list(map(lambda pizza: pizza.establecerEstado(Pizza.ESTADO_COCINADA), orden.obtenerPizzas()))
                 self.__ordenes[self.__ordenes.index(orden)] = orden
-                for pizza in orden.obtenerPizzas():
-                    pizza.establecerEstado(Pizza.ESTADO_COCINADA)
-                    self.__ordenes
-                    
-
+    
     def entregar(self, orden: Orden) -> list[Pizza]:
         pizzas_a_entregar = list()
         for index, pizza in enumerate(orden.obtenerPizzas()):

@@ -34,7 +34,10 @@ class Orden:
         return self.__estadoOrden
     
     def calcularTotal(self) -> float:
-        self.__pizzas
+        total: float = 0.0      
+        for pizza in self.__pizzas:
+            total += pizza.obtenerVariedad().obtenerPrecio()
+        return total
         
 
         

@@ -6,7 +6,7 @@ from pizza import Pizza
 
 class TesterPizzeria:
     def main(self):
-        # 7a. Crear objetos de tipo: 
+        # 7a. Crear objetos de tipo PizzaVariedad, Pizza, Orden, MaestroPizzero y Mozo.: 
         #   Único objeto MaestroPizzero 
         maestroPizzero1 = MaestroPizzero('Anibal')
         print('Maestro Pizzero: ', maestroPizzero1.obtenerNombre())
@@ -29,18 +29,14 @@ class TesterPizzeria:
         pizza2 = Pizza(variedad2)
         pizza3 = Pizza(variedad3)
         pizza4 = Pizza(variedad4)
-        pizza5 = Pizza(variedad1)
-        pizza6 = Pizza(variedad2)
-        pizza7 = Pizza(variedad3)
-        pizza8 = Pizza(variedad4)
+        pizza5 = Pizza(variedad5)
+        pizza6 = Pizza(variedad6)
+        pizza7 = Pizza(variedad7)
+        pizza8 = Pizza(variedad8)
         lista_pizzas1 = [pizza1,pizza2]
         lista_pizzas2 = [pizza3,pizza4]
         lista_pizzas3 = [pizza1,pizza3,pizza4]
-        lista_pizzas4 = [pizza5,pizza6,pizza7,pizza8]
-        print(50*'-')
-        for pizza in lista_pizzas4:
-            print(pizza.obtenerVariedad().obtenerNombreVariedad())
-            print(pizza.obtenerVariedad().obtenerPrecio())
+        lista_pizzas4 = [pizza5,pizza6,pizza7,pizza8]      
         #   Varios objetos de la clase Orden
         orden1 = Orden(1,lista_pizzas1)
         orden2 = Orden(2,lista_pizzas2)
@@ -60,12 +56,34 @@ class TesterPizzeria:
         maestroPizzero1.tomarPedido(orden2)
         maestroPizzero1.tomarPedido(orden3)
         maestroPizzero1.tomarPedido(orden4)
-        print(maestroPizzero1.obtenerOrdenes()[0].obtenerNroOrden())
+        print(maestroPizzero1.obtenerOrdenes()[2].obtenerNroOrden())
         #   Mensaje cocinar()
         print(50*'-')
-        print(maestroPizzero1.obtenerOrdenes()[0].obtenerEstadoOrden())
+        print('Estado Orden:',maestroPizzero1.obtenerOrdenes()[0].obtenerEstadoOrden())
+        print('Estado Pizza:',pizza1.obtenerEstado())
         maestroPizzero1.cocinar()
-        print(maestroPizzero1.obtenerOrdenes()[0].obtenerEstadoOrden())
+        print('Estado Orden:',maestroPizzero1.obtenerOrdenes()[0].obtenerEstadoOrden())
+        print('Estado Pizza:',pizza1.obtenerEstado())
+
+        #   Mensaje entregar()
+        maestroPizzero1.entregar(orden2)
+    
+        # 7c. Enviar los mensajes tomarPizzas y servirPizzas a los objetos de la clase Mozo creados en el punto a.
+        # 7d. Mostrar la transición de estados de los objetos de las clases Orden y Pizza.
+        # 7e. Calcular y mostrar el costo total de las órdenes creadas.
+        print(50*'-')
+        print('Costo total de las órdenes creadas.')
+        total: float = 0.0
+        for orden in lista_ordenes:
+            print(f'Orden Nº {orden.obtenerNroOrden()}: ${orden.calcularTotal()}')
+            total += orden.calcularTotal()
+        print(f'TOTAL: ${total}')
+
+
+
+
+
+
         # print('\nLista de Pizzas por Cocinar')
         # list(map(lambda x: print(x.obtenerVariedad()),maestroPizzero1.obtenerPizzasPorCocinar()))
 
