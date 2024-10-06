@@ -33,7 +33,7 @@ class MaestroPizzero:
             else: break
         contador = 0 
         for pizza in orden.obtenerPizzas():
-            if pizza.obtenerEstado == Pizza.ESTADO_ENTREGADA:
+            if pizza.obtenerEstado() == Pizza.ESTADO_ENTREGADA:
                 contador += 1
         if contador == len(orden.obtenerPizzas()):
             orden.establecerEstadoOrden(Orden.ESTADO_ENTREGADA)

@@ -14,21 +14,19 @@ class Mozo:
         self.__nombre = nombre
 
     def tomarPizzas(self, pizzas: list[Pizza]):
-        # pizzasTomadas = len(self.__pizzas)
-        # pizzasATomar = len(pizzas)
-        # if (pizzasATomar - pizzasTomadas) < 0:
-        #     print(self.__nombre + ": El mozo puede tomar un máximo de 2 pizzas!")
-        # else:
-        #     for pizza in pizzas:
-        #         print(self.__nombre + ": tomando una de " + pizza.obtenerVariedad() + " para ser entregada")
-        #         self.__pizzas.append(pizza)
-        ...
+        pizzasTomadas = len(self.__pizzas)
+        pizzasATomar = len(pizzas)
+        if (pizzasATomar - pizzasTomadas) < 0:
+            print(self.__nombre + ": El mozo puede tomar un máximo de 2 pizzas!")
+        else:
+            for pizza in pizzas:
+                print(self.__nombre + ": tomando una de " + pizza.obtenerVariedad().obtenerNombreVariedad() + " para ser entregada")
+                self.__pizzas.append(pizza)
     
     def servirPizzas(self):
-        # for pizza in self.__pizzas:
-        #     print(self.__nombre + ": Sirviendo pizza de " + pizza.obtenerVariedad())
-        # self.__pizzas = []
-        ...
+        for pizza in self.__pizzas:
+            print(self.__nombre + ": Sirviendo pizza de " + pizza.obtenerVariedad().obtenerNombreVariedad())
+        self.__pizzas = []
 
     # consultas
     def obtenerNombre(self):
