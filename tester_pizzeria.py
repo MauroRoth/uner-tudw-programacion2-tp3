@@ -109,33 +109,41 @@ class TesterPizzeria:
 
         # 7c. Enviar los mensajes tomarPizzas y servirPIzzas a los objetos de la clase Mozo creados en el punto a.
         print(50*'-')
-        print('Mensaje tomarPizzas a Mozo')
-        print(f'\nEstado del Mozo {mozo1.obtenerNombre()}: {mozo1.obtenerEstadoLibre()}')
-        print(f'\nEstado del Mozo {mozo2.obtenerNombre()}: {mozo2.obtenerEstadoLibre()}')
+        print('Mensaje tomarPizzas a Mozo\n')
+        print(25*'-')
+        print('Estados de los mozos antes de enviar el mensaje.')
+        print(f'Estado del Mozo {mozo1.obtenerNombre()}: {mozo1.obtenerEstadoLibre()}')
+        print(f'Estado del Mozo {mozo2.obtenerNombre()}: {mozo2.obtenerEstadoLibre()}')
+        print(25*'-')
 
         #  Mensaje tomarPizzas()
+        print(f'\nMensaje tomarPizzas enviado a {mozo1.obtenerNombre()}')
         mozo1.tomarPizzas(lista_pizzas3)
+        
         print(f'\nPizzas tomadas por el Mozo {mozo1.obtenerNombre()}')
-        list(map(TesterPizzeria.listar_pizzas,enumerate(mozo1.obtenerPizzas())))
         print(f'\nEstado del Mozo {mozo1.obtenerNombre()}: {mozo1.obtenerEstadoLibre()}')
 
+        print(25*'-')
+        print(f'\nMensaje tomarPizzas enviado a {mozo2.obtenerNombre()}')
         mozo2.tomarPizzas(lista_pizzas3)
 
         print(f'\nPizzas tomadas por el Mozo {mozo2.obtenerNombre()}')
-        list(map(TesterPizzeria.listar_pizzas,enumerate(mozo2.obtenerPizzas())))
         print(f'\nEstado del Mozo {mozo2.obtenerNombre()}: {mozo2.obtenerEstadoLibre()}')
         
         #  Mensaje servirPizzas()
         print(50*'-')
-        print('Mensaje servirPizzas a Mozo')
+        print('Mensaje servirPizzas a Mozo\n')
+        print(25*'-')
         mozo1.servirPizzas()
         print(f'\nPizzas Servidas por el Mozzo {mozo1.obtenerNombre()}!!!')
         list(map(lambda x: print(x.obtenerVariedad()),mozo1.obtenerPizzas())) # comprueba que el mozo no tiene pizzas
         print(f'\nEstado del Mozo {mozo1.obtenerNombre()}: {mozo1.obtenerEstadoLibre()}')
+        
+        print(25*'-')
         mozo2.servirPizzas()
         print(f'\nPizzas Servidas por el Mozzo {mozo2.obtenerNombre()}!!!')
         list(map(lambda x: print(x.obtenerVariedad()),mozo2.obtenerPizzas())) # comprueba que el mozo no tiene pizzas
-        print(f'\nEstado del Mozo {mozo1.obtenerNombre()}: {mozo1.obtenerEstadoLibre()}')
+        print(f'\nEstado del Mozo {mozo2.obtenerNombre()}: {mozo2.obtenerEstadoLibre()}')
         
         # 7d. Mostrar la transición de estados de los objetos de las clases Orden y Pizza.
         ## Este punto fue realizado en la medida que se enviaban los mensajes en los puntos anteriores.
