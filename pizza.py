@@ -20,7 +20,7 @@ class Pizza:
         self.__estado = estado
 
     # consultas   
-    def __repr__(self):
+    def __repr__(self) -> PizzaVariedad:
         return self.__variedad
     
     def obtenerVariedad(self) -> PizzaVariedad:
