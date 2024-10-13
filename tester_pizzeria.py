@@ -81,8 +81,10 @@ class TesterPizzeria:
         maestroPizzero1.tomarPedido(orden2)
         maestroPizzero1.tomarPedido(orden3)
         maestroPizzero1.tomarPedido(orden4)
+
         print('Mensaje tomar pedido a Maestro Pizzero')
-        print(maestroPizzero1.obtenerOrdenes()[2].obtenerNroOrden())
+        print('Órdenes tomadas por maestro pizzero:')
+        list(map(lambda x: print('Orden Nº ',x.obtenerNroOrden()),maestroPizzero1.obtenerOrdenes()))
         
         # #   Mensaje cocinar()
         print(50*'-')
